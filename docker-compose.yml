@@ -1,0 +1,21 @@
+
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URL=mongodb+srv://barikpabitra101:R2YgmYUCCCu4v5Bh@cluster0.dafdba1.mongodb.net/analytics_engine
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped

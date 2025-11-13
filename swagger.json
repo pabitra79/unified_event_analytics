@@ -1,0 +1,40 @@
+{
+  "swaggerDefinition": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Unified_event_analytics",
+      "version": "1.0.0",
+      "description": "API documentation for managing unified event analytics",
+      "contact": {
+        "name": "Pabitra Barik",
+        "email": "pabitra@example.com"
+      }
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5000",
+        "description": "Development server"
+      }
+    ],
+    "components": {
+      "securitySchemes": {
+        "ApiKeyAuth": {
+          "type": "apiKey",
+          "in": "header",
+          "name": "x-api-key"
+        }
+      }
+    },
+    "tags": [
+      {
+        "name": "Auth",
+        "description": "User authentication endpoints"
+      },
+      {
+        "name": "Analytics",
+        "description": "Analytics data endpoints"
+      }
+    ]
+  },
+  "apis": ["./app/router/*.ts"]
+}
